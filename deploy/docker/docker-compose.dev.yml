@@ -10,6 +10,7 @@ services:
         - DINKY_VERSION
     ports:
       - "8888:8888"
+      - "8082:8082"
     env_file: .env
     networks:
       - dinky
