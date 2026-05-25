@@ -12,9 +12,9 @@ ENV JVM_OPTS="-XX:+UseContainerSupport -XX:InitialRAMPercentage=70.0 -XX:MaxRAMP
 
 USER root
 
-ADD build/dinky-release*.tar.gz /opt
+ADD deploy/docker/build/dinky-release*.tar.gz /opt
 RUN  mv /opt/dinky-release* /opt/dinky && ln -s /opt/flink/lib/*  /opt/dinky/extends/flink${FLINK_VERSION}/ && mkdir /opt/dinky/config/static
-ADD  build/dist/ /opt/dinky/config/static
+ADD  deploy/docker/build/dist/ /opt/dinky/config/static
 
 WORKDIR /opt/dinky/
 
